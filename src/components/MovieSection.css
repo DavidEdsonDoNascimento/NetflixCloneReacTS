@@ -1,0 +1,33 @@
+
+.movieSection {
+    margin-bottom: 30px;
+}
+
+.movieSection h2 {
+    margin: 0px 0px 0px 30px;
+}
+
+.movieSection--listarea {
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.movieSection--list {
+    width: 10000px;
+}
+
+.movieSection--item {
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+}
+
+.movieSection--item img {
+    width: 100%;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.movieSection--item img:hover {
+    transform: scale(1);
+}
