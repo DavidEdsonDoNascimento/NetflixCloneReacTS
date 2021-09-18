@@ -13,6 +13,7 @@
 
 # misc
 .env.development
+.env*
 
 npm-debug.log*
 yarn-debug.log*
