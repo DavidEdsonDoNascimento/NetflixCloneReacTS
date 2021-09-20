@@ -1,5 +1,5 @@
 import './MovieSection.css';
-import Movie from './../interfaces/Movie';
+import Movie from './../../interfaces/Movie';
 
 export default ({ slugs, title, items }: Movie) =>
 (<div className="movieSection">

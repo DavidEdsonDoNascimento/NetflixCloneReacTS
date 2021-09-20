@@ -66,4 +66,26 @@ export default abstract class MovieAPI {
 
         return movies;
     }
+
+    static async getMovieInfo(id: string, type: string): Promise<any> {
+
+        if (!id) {
+            return {};
+        }
+
+        const PREFIX = {
+            MOVIE: 'movie',
+            TV: 'tv'
+        };
+
+        if (PREFIX.MOVIE === type) {
+            return await basicFetch(`/movie/${id}?${MovieAPI.LANGUAGE}&${MovieAPI.API_KEY}`);
+        }
+        if (PREFIX.TV === type) {
+            return await basicFetch(`/tv/${id}?${MovieAPI.LANGUAGE}&${MovieAPI.API_KEY}`);
+        }
+
+        return {};
+
+    }
 }
