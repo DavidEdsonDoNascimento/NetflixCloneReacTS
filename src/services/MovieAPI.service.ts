@@ -1,4 +1,4 @@
-import Movie from './interfaces/Movie';
+import Movie from './../interfaces/Movie';
 
 const basicFetch = async (endpoint: string): Promise<any> => {
     const req = await fetch(`https://api.themoviedb.org/3${endpoint}`);
