@@ -3,8 +3,10 @@ import MovieAPI from './services/MovieAPI.service';
 import MovieSection from './components/MovieSection';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import './App.css';
+import { isReturnStatement } from 'typescript';
 
 export const App = () => {
 
@@ -27,8 +29,10 @@ export const App = () => {
 
     if (results) {
       const originalRandom = results[Math.floor(Math.random() * results.length - 1)];
-      const featured = await MovieAPI.getMovieInfo(originalRandom.id, 'tv');
-      console.log(featured);
+      if(!originalRandom?.id){
+        return;
+      }
+      const featured = await MovieAPI.getMovieInfo(originalRandom?.id, 'tv');
       setFeaturedData(featured);
     }
   };
@@ -58,6 +62,7 @@ export const App = () => {
           return <MovieSection key={key} title={title} items={items} slugs="" />
         })}
       </section>
+      <Footer />
     </div>
   );
 }
