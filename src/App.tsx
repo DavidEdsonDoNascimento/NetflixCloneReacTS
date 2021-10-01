@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MovieAPI from './services/MovieAPI.service';
 import MovieSection from './components/MovieSection';
 import FeaturedMovie from './components/FeaturedMovie';
@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import './App.css';
-import { isReturnStatement } from 'typescript';
 
 export const App = () => {
 

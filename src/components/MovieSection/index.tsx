@@ -1,9 +1,17 @@
 import './MovieSection.css';
 import Movie from './../../interfaces/Movie';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({ slugs, title, items }: Movie) =>
-(<div className="movieSection">
+<div className="movieSection">
     <h2>{title}</h2>
+    <div className="movieSection--left">
+        <NavigateBeforeIcon className="navigate-left"/>
+    </div>
+    <div className="movieSection--right">
+        <NavigateNextIcon className="navigate-right"/>
+    </div>
     <div className="movieSection--listarea">
         <div className="movieSection--list">
             {items?.results?.map((item: any, key: string) => {
@@ -13,4 +21,4 @@ export default ({ slugs, title, items }: Movie) =>
             })}
         </div>
     </div>
-</div>);
+</div>

@@ -30,3 +30,37 @@
 .movieSection--item img:hover {
     transform: scale(1);
 }
+
+.navigate-left,
+.navigate-right {
+    font-size: 50px;
+}
+
+.movieSection--left,
+.movieSection--right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.movieSection--left {
+    left: 0;
+}
+
+.movieSection--right {
+    right: 0;
+}
+
+.movieSection:hover .movieSection--left,
+.movieSection:hover .movieSection--right {
+    opacity: 1;
+}
