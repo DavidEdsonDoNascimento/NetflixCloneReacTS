@@ -12,7 +12,7 @@
 }
 
 .movieSection--list {
-    width: 10000px;
+    transition: all ease 0.5s;
 }
 
 .movieSection--item {

@@ -17,40 +17,43 @@ export const App = () => {
   const [featuredData, setFeaturedData] = useState(null);
   const [backHeader, setBlackHeader] = useState(false);
 
-  async function loadAllMovies() {
-
-    let movies = await MovieAPI.getHomeList();
-
-    setMovieList(movies);
-
-    const originals = movies?.filter(item => item.slugs === 'originals')?.shift()?.items;
-    const { results } = originals;
-
-    if (results) {
-      const originalRandom = results[Math.floor(Math.random() * results.length - 1)];
-      if(!originalRandom?.id){
-        return;
-      }
-      const featured = await MovieAPI.getMovieInfo(originalRandom?.id, 'tv');
-      setFeaturedData(featured);
-    }
-  };
-
   async function observePageScroll() {
     setBlackHeader(window.scrollY > 10);
   }
 
-  async function toggleEventPageScroll() {
-    window.addEventListener('scroll', observePageScroll);
-
-    return () => {
-      window.removeEventListener('scroll', observePageScroll);
-    }
-  }
   useEffect(() => {
+    
+    async function loadAllMovies() {
+
+      let movies = await MovieAPI.getHomeList();
+  
+      setMovieList(movies);
+  
+      const originals = movies?.filter(item => item.slugs === 'originals')?.shift()?.items;
+      const { results } = originals;
+  
+      if (results) {
+        const originalRandom = results[Math.floor(Math.random() * results.length - 1)];
+        if(!originalRandom?.id){
+          return;
+        }
+        const featured = await MovieAPI.getMovieInfo(originalRandom?.id, 'tv');
+        setFeaturedData(featured);
+      }
+    };
+
+    async function toggleEventPageScroll() {
+      window.addEventListener('scroll', observePageScroll);
+      
+      return () => {
+        window.removeEventListener('scroll', observePageScroll);
+      }
+    }
+
     loadAllMovies();
     toggleEventPageScroll();
   }, []);
+
 
   return (
     <div className="page">
