@@ -64,3 +64,10 @@
 .movieSection:hover .movieSection--right {
     opacity: 1;
 }
+
+@media (max-width: 760px) {
+    .movieSection--left,
+    .movieSection--right {
+        opacity: 1;
+    }
+}
