@@ -27,3 +27,6 @@ REACT_APP_MOVIE_API_KEY=API_KEY
 ```
 yarn start
 ```
+### Preview 
+
+<a href="https://picasion.com/"><img src="https://i.picasion.com/pic91/6202af5d137b71af9c19d5be03b21a70.gif" width="400" height="225" border="0" alt="https://picasion.com/" /></a><br /><a href="https://picasion.com/"></a>
