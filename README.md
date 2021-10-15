@@ -4,11 +4,13 @@ Taking the first steps with ReactJS and Typescript, creating a sample applicatio
 
 ## Required Configuration:
 
--   Node & yarn
+- [Node](https://nodejs.org)
 
 ## Installation:
 
-```
+```js
+npm install
+or
 yarn
 ```
 
@@ -25,8 +27,11 @@ REACT_APP_MOVIE_API_KEY=API_KEY
 ## Start:
 
 ```
+npm start 
+or
 yarn start
 ```
+
 ### Preview 
 
 <a href="https://picasion.com/"><img src="https://i.picasion.com/pic91/6202af5d137b71af9c19d5be03b21a70.gif" width="400" height="225" border="0" alt="https://picasion.com/" /></a><br /><a href="https://picasion.com/"></a>
